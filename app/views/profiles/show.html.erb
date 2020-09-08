@@ -1,4 +1,6 @@
-<p id="notice"><%= notice %></p>
+
+
+<h1>Bienvenue sur votre profil public. </h1>
 
 <p>
   <strong>Description:</strong>
@@ -6,12 +8,12 @@
 </p>
 
 <p>
-  <strong>Skills:</strong>
+  <strong>Compétences:</strong>
   <%= @profile.skills %>
 </p>
 
 <p>
-  <strong>Linkedin url:</strong>
+  <strong>Lien Linkedin:</strong>
   <%= @profile.linkedin_url %>
 </p>
 
@@ -21,11 +23,11 @@
 </p>
 
 <p>
-  <strong>City:</strong>
+  <strong>Ville:</strong>
   <%= @profile.city %>
 </p>
 
 
 
-<%= link_to 'Edit', edit_profile_path(@profile) %> |
-<%= link_to 'Back', profiles_path %>
+<%= link_to 'Modifiez votre profil', edit_profile_path(@profile) %> 
+
