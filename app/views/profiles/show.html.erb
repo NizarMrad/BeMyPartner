@@ -1,0 +1,33 @@
+
+
+<h1>Bienvenue sur votre profil public. </h1>
+
+<p>
+  <strong>Description:</strong>
+  <%= @profile.description %>
+</p>
+
+<p>
+  <strong>Compétences:</strong>
+  <%= @profile.skills %>
+</p>
+
+<p>
+  <strong>Lien Linkedin:</strong>
+  <%= @profile.linkedin_url %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @profile.age %>
+</p>
+
+<p>
+  <strong>Ville:</strong>
+  <%= @profile.city %>
+</p>
+
+
+
+<%= link_to 'Modifiez votre profil', edit_profile_path(@profile) %> 
+
