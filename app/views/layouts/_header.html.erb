@@ -1,0 +1,85 @@
+<nav class="navbar navbar-toggleable-md bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+        <div class="container">
+            <div class="dropdown button-dropdown">
+                <a href="#" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                    <span class="button-bar"></span>
+                    <span class="button-bar"></span>
+                    <span class="button-bar"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="./index.html">Profile</a>
+                    <a class="dropdown-item" href="./friends-page.html">Find Partners -</a>
+                    <a class="dropdown-item" href="./edit-profile.html">Edit profile</a>
+                    <a class="dropdown-item" href="./messages-page.html">Messages</a>
+                    <%= link_to 'Projects', projects_path, class: "dropdown-item" %>
+                    <% if current_user %>
+                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                    <% else %>
+                        <%= link_to 'Sign up' ,  new_user_registration_path, class: "dropdown-item" %>
+                        <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
+                    <% end %>
+                    <a class="dropdown-item" href="./nucleo-icons.html">Articles</a>
+                </div>
+            </div>
+            <div class="navbar-translate">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+                <a class="navbar-brand"  href="#">
+                    Be-My-Partner
+                </a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="imgages/startup.jpg">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="./index.html">
+                            <p class="hidden-lg-up">Profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./friends.html">
+                            <p class="hidden-lg-up">Find friends</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./edit-profile.html">
+                            <p class="hidden-lg-up">Edit profile</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./chat.html">
+                            <p class="hidden-lg-up">Messages</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./components.html">
+                            <p class="hidden-lg-up">Components</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login-page.html">
+                            <p class="hidden-lg-up">Login</p>
+                        </a>
+                        
+                    </li>
+                    <li class="nav-item">
+                            <%= link_to 'Sign in', new_user_session_path, class: "hidden-lg-up" %>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./landing-page.html">
+                            <p class="hidden-lg-up">Landing page</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./nucleo-icons.html">
+                            <p class="hidden-lg-up">Icons</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>

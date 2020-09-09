@@ -1,40 +1,50 @@
-<p id="notice"><%= notice %></p>
+<main class="container-section">
+<%= render ("layouts/header") %>
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url('/assets/startup2.jpg');"></div>
+                <h1>Your Projects</h1>
+            </div>
+        </section>
+    </div>
+    <div class="porfile-content">
+      <h6><%= link_to 'New Project', new_project_path, class: "link"%></h6>
+      <h6><%= link_to 'Home', root_path, class: "link" %></h6> 
+    </div>
+  <div class="tab-pane Followers" id="followers" role="tabpanel">
+    <div class="container-fluid">
+        <div class="row">
+        <% @projects.each do |project| %>
+          <div class="col-12 col-sm-6">
+           <div class="card">
+              <img class="card-img-top" src="/assets/workplace.jpg" alt="Card image cap">
+              <div class="card-block">
+                  <img class="img-profile-folow" src="img/Friends/woman-1.jpg" alt="">
+                    <h4><strong> <%= project.title %></strong> </h4>
+                    </br>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Budget :</strong>  <%= project.budget_id %></li>
+                <li class="list-group-item"><strong>City :</strong>  <%= project.city %></li>
+                <li class="list-group-item"><strong>Profile needed :</strong>   <%= project.profile_needed %></li>
+                <li class="list-group-item"><strong>Files :</strong> <%= project.profile_needed %></li>
+                <li class="list-group-item"><strong>Contact of the project owner :</strong>  <%= project.user.email %></li>
+              </ul>
+                    </br>
+        <p class="card-text"><strong> Project description:</strong>  <%= project.description %></p>
 
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Budget</th>
-      <th>Profile needed</th>
-      <th>Files</th>
-      <th>City</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= project.budget_id %></td>
-        <td><%= project.profile_needed %></td>
-        <td><%= project.files %></td>
-        <td><%= project.city %></td>
-        <td><%= project.user.email %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Project', new_project_path %>
-<%= link_to 'Home', root_path %>
+        <div class="card-body">
+          <%= link_to 'Show', project, class: "card-link" %>
+          <%= link_to 'Edit', edit_project_path(project), class: "card-link" %>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
+        </div>
+        
+        </div>
+      </div>
+  </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+  <%= render ("layouts/footer") %>
+</main>
