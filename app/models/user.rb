@@ -1,7 +1,8 @@
 class User < ApplicationRecord
-  
+  before_create :build_profile
   after_create :welcome_send
   
+
   has_many :projects
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
