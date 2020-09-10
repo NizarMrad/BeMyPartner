@@ -21,7 +21,7 @@
 }
 
 @mixin rotate-180(){
-    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
     -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -142,7 +142,7 @@
 
 
 @mixin nc-rotate($degrees, $rotation) {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})";
   -webkit-transform: rotate($degrees);
   -moz-transform: rotate($degrees);
   -ms-transform: rotate($degrees);
@@ -151,7 +151,7 @@
 }
 
 @mixin nc-flip($horiz, $vert, $rotation) {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation});
+  filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=#{$rotation})";
   -webkit-transform: scale($horiz, $vert);
   -moz-transform: scale($horiz, $vert);
   -ms-transform: scale($horiz, $vert);
