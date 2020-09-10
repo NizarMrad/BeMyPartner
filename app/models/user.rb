@@ -1,4 +1,8 @@
 class User < ApplicationRecord
+  before_create :build_profile
+  after_create :welcome_send
+  
+
   has_many :projects
   has_one :profile, dependent: :destroy
   accepts_nested_attributes_for :profile
@@ -7,9 +11,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_one :profile
+
 
 
   
+
+  def welcome_send
+    UserMailer.welcome_email(self).deliver_now
+  end
+
 
 
 end
