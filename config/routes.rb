@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :profiles, only: [:show, :update, :edit]
+  resources :profiles, only: [:show, :update, :edit], path: :profil
 
   resources :budgets
   resources :projects
