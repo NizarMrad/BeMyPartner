@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_09_10_002954) do
     t.string "title"
     t.integer "sector_id"
     t.text "content"
+
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

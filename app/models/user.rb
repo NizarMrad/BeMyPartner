@@ -6,17 +6,13 @@ class User < ApplicationRecord
   has_many :projects
   has_many :articles 
   has_one :profile, dependent: :destroy
+ 
 
   accepts_nested_attributes_for :profile
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-
-
-
-
-  
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now

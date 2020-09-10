@@ -4,8 +4,8 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :title
       t.integer :sector_id
       t.text :content
-      t.belongs_to :user, foreign_key: true
 
+      t.belongs_to :user, foreign_key: true
 
       t.timestamps
     end
