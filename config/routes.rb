@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :articles
+
   resources :profiles, only: [:show, :update, :edit]
 
   resources :budgets
