@@ -15,10 +15,4 @@
 //= require turbolinks
 //= require_tree .
 
-//= require js/core/jquery.3.2.1.min.js
-//= require js/core/tether.min.js
-//= require js/core/bootstrap.min.js
-//= require js/plugins/bootstrap-switch.js
-//= require js/plugins/nouislider.min.js
-//= require js/plugins/bootstrap-datepicker.js
 //= require now-ui-kit
