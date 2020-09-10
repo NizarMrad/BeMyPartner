@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-ActiveRecord::Schema.define(version: 2020_09_08_154621) do
-
-
+ActiveRecord::Schema.define(version: 2020_09_10_002954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_154621) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -43,7 +40,6 @@ ActiveRecord::Schema.define(version: 2020_09_08_154621) do
     t.index ["project_id"], name: "index_budgets_on_project_id"
   end
 
-
   create_table "comments", force: :cascade do |t|
     t.text "text"
     t.bigint "user_id"
@@ -52,21 +48,17 @@ ActiveRecord::Schema.define(version: 2020_09_08_154621) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-
   create_table "profiles", force: :cascade do |t|
     t.text "description"
     t.string "skills"
     t.string "linkedin_url"
     t.integer "age"
     t.string "city"
-
     t.bigint "user_id"
     t.integer "sector_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
-
-
   end
 
   create_table "projects", force: :cascade do |t|
@@ -80,14 +72,12 @@ ActiveRecord::Schema.define(version: 2020_09_08_154621) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
-
   end
 
   create_table "sectors", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-
   end
 
   create_table "users", force: :cascade do |t|
@@ -107,10 +97,7 @@ ActiveRecord::Schema.define(version: 2020_09_08_154621) do
   add_foreign_key "budgetisations", "budgets"
   add_foreign_key "budgetisations", "projects"
   add_foreign_key "budgets", "projects"
-
-  add_foreign_key "profiles", "users"
-
   add_foreign_key "comments", "users"
-
+  add_foreign_key "profiles", "users"
   add_foreign_key "projects", "users"
 end
