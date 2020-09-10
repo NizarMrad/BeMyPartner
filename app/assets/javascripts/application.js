@@ -21,4 +21,4 @@
 //= require js/plugins/bootstrap-switch.js
 //= require js/plugins/nouislider.min.js
 //= require js/plugins/bootstrap-datepicker.js
-//= require js/now-ui-kit.js
+//= require now-ui-kit

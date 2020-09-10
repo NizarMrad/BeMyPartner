@@ -13,5 +13,6 @@
  *= require_tree .
  *= require_self
  *= require css/bootstrap.min.css
- *= require css/now-ui-kit.css
+
  */
+@import "now-ui-kit";
