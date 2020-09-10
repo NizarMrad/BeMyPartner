@@ -1,5 +1,6 @@
 <h2>Sign up</h2>
 
+  <% resource.profile || resource.build_profile %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -21,6 +22,33 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+
+<%= f.fields_for :profile do |form| %>
+<div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :compétences %>
+    <%= form.text_field :skills %>
+  </div>
+
+  <div class="field">
+    <%= form.label :linkedin %>
+    <%= form.text_field :linkedin_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :age %>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <%= form.label :ville %>
+    <%= form.text_field :city %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

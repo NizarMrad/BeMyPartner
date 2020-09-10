@@ -7,7 +7,9 @@ class ProfilesController < ApplicationController
   end
 
   def new
-    @profile = Profile.new
+    @profile = current_user.projects.build
+
+
     
   end
 
@@ -15,7 +17,20 @@ class ProfilesController < ApplicationController
   def edit
   end
 
+  # POST /projects.json
+  def create
+    @profile = current_user.profile.build(profile_params)
 
+    respond_to do |format|
+      if @profile.save
+        format.html { redirect_to @profile, notice: 'Profile was successfully created.' }
+        format.json { render :show, status: :created, location: @profile}
+      else
+        format.html { render :new }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   def update
     respond_to do |format|
