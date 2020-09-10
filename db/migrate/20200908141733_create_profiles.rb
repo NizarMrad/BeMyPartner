@@ -6,7 +6,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :linkedin_url
       t.integer :age
       t.string :city
-      t.integer :user_id
+      t.belongs_to :user, foreign_key: true
       t.integer :sector_id
 
       t.timestamps
