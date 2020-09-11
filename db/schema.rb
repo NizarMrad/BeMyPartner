@@ -17,9 +17,8 @@ ActiveRecord::Schema.define(version: 2020_09_11_142456) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
-    t.integer "sector_id"
     t.text "content"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
@@ -65,11 +64,10 @@ ActiveRecord::Schema.define(version: 2020_09_11_142456) do
     t.string "linkedin_url"
     t.integer "age"
     t.string "city"
+    t.integer "user_id"
     t.integer "sector_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -110,6 +108,5 @@ ActiveRecord::Schema.define(version: 2020_09_11_142456) do
   add_foreign_key "budgets", "projects"
   add_foreign_key "comments", "users"
   add_foreign_key "invitations", "users"
-  add_foreign_key "profiles", "users"
   add_foreign_key "projects", "users"
 end
