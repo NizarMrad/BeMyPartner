@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'home_message/index'
   resources :articles
-
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+    resources :messages, only: [:create]
+  end
   resources :profiles
 
   resources :budgets
