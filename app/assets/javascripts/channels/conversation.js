@@ -40,7 +40,7 @@ App.conversation = App.cable.subscriptions.create("ConversationChannel", {
     });
   },
 });
-$(document).on("submit", ".new_message", function (e) {
+$(document).submit(".new_message", function (e) {
   e.preventDefault();
   var values = $(this).serializeArray();
   App.conversation.speak(values);

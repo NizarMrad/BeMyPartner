@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get 'invitations/create'
   get 'invitations/destroy'
 
-  mount ActionCable.server => ‘/cable’
+
 
   root to: 'pages#home'
   devise_for :users
