@@ -22,6 +22,7 @@
 //= require js/plugins/nouislider.min.js
 //= require js/plugins/bootstrap-datepicker.js
 //= require js/now-ui-kit.js
+//= require cable
 
 (function () {
   $(document).on("click", ".toggle-window", function (e) {
