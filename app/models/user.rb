@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   before_create :build_profile
+  after_create :welcome_send
   has_many :projects
   has_many :articles
   has_one :profile
@@ -27,9 +28,10 @@ class User < ApplicationRecord
          def send_invitation(user)
            invitations.create(friend_id: user.id)
          end
+
     def welcome_send
     UserMailer.welcome_email(self).deliver_now
-  end
+    end
 
 
 

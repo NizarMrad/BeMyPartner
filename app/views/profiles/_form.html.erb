@@ -1,43 +1,76 @@
-<%= form_with(model: profile, local: true) do |form| %>
-  <% if profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
-
-      <ul>
-      <% profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<main class="container-section">
+<article> 
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path ("startup.jpg") %>);"></div>
+                <h1>Edit profilt</h1>
+            </div>
+        </section> 
     </div>
-  <% end %>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="porfile-content">
+                        <div class="photo-container img-edit-profile">
+                            <%= image_tag ("guy-1.jpg") %>
+                        </div>
+                        <label for="photoFile" class="btn btn-primary ">Files</label>
+                        <input type="file" class="hidden-xl-down" id="photoFile">
+                    </div>
+                </div>
+                <div class="col-12">
+                <%= form_with(model: profile, local: true) do |form| %>
+                    <% if profile.errors.any? %>
+                      <div id="error_explanation">
+                            <h2><%= pluralize(profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+                      
+                            <ul>
+                            <% profile.errors.full_messages.each do |message| %>
+                              <li><%= message %></li>
+                            <% end %>
+                            </ul>
+                      </div>
+                    <% end %>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="Name" class="p2">Skills</label>
+                                <%= form.text_field :skills, class: "form-control", placeholder: "Skills" %>
+                                <span class="error"></span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="LastName" class="p2">Linkedin</label>
+                                <%= form.number_field :linkedin_url, class: "form-control", placeholder: "Linkedin url" %>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="Name" class="p2">City</label>
+                                <%= form.text_field :city, class: "form-control", placeholder: "City" %>
+                                <span class="error"></span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="LastName" class="p2">Age</label>
+                                <%= form.text_field :age, class: "form-control", placeholder: "Age" %>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <label for="Descropcion" class="p2">Description</label>
+                                <%= form.text_area :description, placeholder: "Tell to your futur partner about your profil", class: "form-control", cols: "30", rows: "3" %>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        
+                        <%= form.submit :Confirmer, class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+</main>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :compétences %>
-    <%= form.text_field :skills %>
-  </div>
-
-  <div class="field">
-    <%= form.label :linkedin %>
-    <%= form.text_field :linkedin_url %>
-  </div>
-
-  <div class="field">
-    <%= form.label :age %>
-    <%= form.number_field :age %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ville %>
-    <%= form.text_field :city %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit :Confirmer%>
-  </div>
-<% end %>
