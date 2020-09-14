@@ -67,4 +67,5 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'redis'
-
+gem 'faker'
+gem 'table_print'
