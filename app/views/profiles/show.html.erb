@@ -1,8 +1,26 @@
-
-
-<h1>Bienvenue sur votre profil public. </h1>
-
-<p>
+  
+  <main class="container-section">
+<%= render ("layouts/header") %>
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path ("startup3.jpg") %>);"></div>
+                <h1>Your Profile</h1>
+            </div>
+        </section>
+    </div>
+  <div class="tab-pane Followers" id="followers" role="tabpanel">
+    <div class="container-fluid">
+        <div class="row">
+       
+          <div class="col-12 col-sm-12">
+     <div class="card">
+       <br/>
+         <div class="card-block">
+    <br/>
+    <%= @profile.profile_picture  %>
+    <h4>Juan Ramirez</h4>
+    <p>
   <strong>Description:</strong>
   <%= @profile.description %>
 </p>
@@ -27,10 +45,21 @@
   <%= @profile.city %>
 </p>
 
-
-<% if current_user.id == @profile.user_id %>
-    <%= link_to 'Modifiez votre profil', edit_profile_path(@profile) %> 
+      
+    
+ 
+  <% if current_user.id == @profile.user_id %>
+  <%= link_to 'Modifiez votre profil', edit_profile_path(@profile), class:"btn btn-primary" %>
   <% end %>
+         </div>
+     </div>
+          </div>
+         
+        </div>
+    </div>
+  </div>
+  <%= render ("layouts/footer") %>
+</main>
 
 
 
