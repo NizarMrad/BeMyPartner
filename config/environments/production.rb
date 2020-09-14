@@ -39,13 +39,14 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
-
+  config.action_cable.url = 'wss://bemypartner-staging.herokuapp.com/cable'
+  config.action_cable.allowed_request_origins = [ 'https://bemypartner-staging.herokuapp.com/cable', /http://bemypartner-staging.herokuapp.com/cable.*/ ]
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
@@ -65,7 +66,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = {host: "https://bemypartner-production.herokuapp.com/"}
+  config.action_mailer.default_url_options = {host: "https://bemypartner-staging.herokuapp.com/"}
   config.action_mailer.perform_deliveries = true
 
   # Ignore bad email addresses and do not raise email delivery errors.
@@ -94,8 +95,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  config.web_socket_server_url = "wss://bemypartner-staging.herokuapp.com" 
-
-  config.action_cable.allowed_request_origins = ['https://bemypartner-staging.herokuapp.com', 'http://bemypartner-staging.herokuapp.com']
 end

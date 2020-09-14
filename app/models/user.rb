@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :pending_invitations, -> { where confirmed: false }, class_name: 'Invitation', foreign_key: "friend_id"
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
+  
+ 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -32,6 +34,7 @@ class User < ApplicationRecord
     def welcome_send
     UserMailer.welcome_email(self).deliver_now
     end
+    
 
 
 

@@ -67,4 +67,4 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'dotenv-rails'
 gem 'redis'
-
+gem "aws-sdk-s3", require: false
