@@ -38,9 +38,8 @@ ActiveRecord::Schema.define(version: 2020_09_14_150800) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
-    t.integer "sector_id"
     t.text "content"
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_articles_on_user_id"
@@ -101,26 +100,28 @@ ActiveRecord::Schema.define(version: 2020_09_14_150800) do
   end
 
   create_table "profiles", force: :cascade do |t|
+    t.string "name"
     t.text "description"
     t.string "skills"
     t.string "linkedin_url"
     t.integer "age"
     t.string "city"
+    t.bigint "user_id", null: false
     t.integer "sector_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "projects", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.integer "budget_id"
-    t.string "profile_needed"
+    t.string "description"
     t.string "files"
+    t.text "title"
+    t.string "sector"
+    t.integer "budget"
     t.string "city"
-    t.bigint "user_id"
+    t.string "profile_needed"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
