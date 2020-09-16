@@ -10,63 +10,129 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="content-center text-center porfile-content"> 
-                            <% if current_user.profile.avatar.attached? %>
-                            <%= image_tag current_user.profile.avatar, class: "photo-container" %>
-                            <% else %>
-                            <%= image_tag "guy-1.jpg", class:'photo-container' %>
-                            <% end %>
+                        <div class="content-center text-center porfile-content">
+                            <div class="photo-container">
+                                <img  alt="">
+                            </div>
                             <h3 class="title">john Doe</h3>
-                            
+                            <p class="category">Developer</p>
                             <a href="#button" class="btn btn-primary btn-round btn-lg">Follow</a>
-                            <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Linkedin">
-                                <%= image_tag('linkedin.png') %>
+                            <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Twitter">
+                                <i class="fa fa-twitter"></i>
                             </a>
                             <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Instagram">
-                                <%= image_tag('twitter.png') %>
+                                <i class="fa fa-instagram"></i>
                             </a>
-                            
                         </div>
-
                     </div>
+                     <% User.all.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= link_to 'Show', profiles_path %></td>
+        
+        <% if signed_in? && !Invitation.reacted?(current_user.id, user.id) && current_user != user %>
+          <td> <%= link_to 'Send Invitation',
+            invitations_create_path(ids: {id1: current_user.id, id2: user.id})
+          %></td>
+        <% end %>
+      </tr>
+    <% end %>
                     <div class="col-md-6">
                         <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
                             <li class="nav-item">
                                 <a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-controls="home">
-                                    Articles
+                                    Tweets
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#following" role="tab" aria-controls="following">
-                                    Following projects
+                                    Following
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#followers" role="tab" aria-controls="followers">
-                                    Potential partners
+                                    Followers
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" data-toggle="tab" href="#likes" role="tab" aria-controls="likes">
-                                    Matchs
+                                    Likes
                                 </a>
                             </li>
                         </ul>
-                            
+
                         <div class="tab-content">
                             <div class="tab-pane active" id="home" role="tabpanel">
-                            <%= Article.all.each do |article| %>
                                 <div class="media Tweets">
-                                <%= image_tag('workplace.jpg', class:"mr-3 rounded-circle img-flex", alt: "Generic placeholder image") %>
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
                                     <div class="media-body">
-                                        <h5 class="mt-0"><%= article.title %></h5>
-                                        <%= article.content %>
-                                        <br/>
-                                        <%= link_to 'Show', article %> 
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
                                     </div>
                                 </div>
-                                
-                                <% end %>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
+                                <div class="media Tweets">
+                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
+                                    <div class="media-body">
+                                        <h5 class="mt-0">Media heading</h5>
+                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                                    </div>
+                                </div>
                             </div>
                             <!-- following -->
                             <div class="tab-pane Follow" id="following" role="tabpanel">
@@ -76,15 +142,10 @@
                                             <div class="card">
                                                 <img class="card-img-top"  alt="Card image cap">
                                                 <div class="card-block">
+                                                    <img class="img-profile-folow" alt="">
                                                     <h4>JS Fundación</h4>
                                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                                   
-                                                    <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Linkedin">
-                                                    <%= image_tag('like.png') %>
-                                                    </a>
-                                                    <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Linkedin">
-                                                    <%= image_tag('dislike.png') %>
-                                                    </a>
+                                                    <a href="#" class="btn btn-primary btn-round btn-lg">Not Follow</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -93,7 +154,6 @@
                                                 <img class="card-img-top"  alt="Card image cap">
                                                 <div class="card-block">
                                                     <img class="img-profile-folow"  alt="">
-                                                    
                                                     <h4>HTML Cinco</h4>
                                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                                     <a href="#" class="btn btn-primary btn-round btn-lg">Not Follow</a>
@@ -218,35 +278,39 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="media">
-                                            <%= image_tag('woman-1.jpg') %>
+                                            <img class="d-flex mr-3"  alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h6 class="mt-0">Jane Doe</h6>
-                                                <a href="#button" class="btn btn-primary btn-round btn-sm">Follow</a>
+                                                <a href="#button" class="btn btn-primary btn-round">Follow</a>
                                             </div>
                                         </div>
                                         <hr>
                                     </div>
                                     <div class="col-12">
                                         <div class="media">
-                                         <%= image_tag('woman-2.jpg') %>
+                                            <img class="d-flex mr-3"  alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h6 class="mt-0">Jane Doe</h6>
-                                                <a href="#button" class="btn btn-primary btn-round btn-sm">Follow</a>
+                                                <a href="#button" class="btn btn-primary btn-round">Follow</a>
                                             </div>
                                         </div>
                                         <hr>
                                     </div>
                                     <div class="col-12">
                                         <div class="media">
-                                        <%= image_tag('woman-3.jpg') %>
+                                            <img class="d-flex mr-3"  alt="Generic placeholder image">
                                             <div class="media-body">
                                                 <h6 class="mt-0">Jane Doe</h6>
-                                                <a href="#button" class="btn btn-primary btn-round btn-sm">Follow</a>
+                                                <a href="#button" class="btn btn-primary btn-round">Follow</a>
                                             </div>
                                         </div>
                                     </div>
 
-                                 
+                                    <div class="col-12">
+                                        <div class="is-content">
+                                            <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootdeycom" id="_carbonads_js"></script>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -257,4 +321,3 @@
         <%= render("layouts/footer") %>
     </div>
     </body>
-                

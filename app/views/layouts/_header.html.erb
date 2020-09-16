@@ -8,17 +8,18 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <%= link_to 'Profile', profiles_path, class:"dropdown-item"%>
-                    <a class="dropdown-item" href="./friends-page.html">Find Partners -</a>
-                    <a class="dropdown-item" href="./edit-profile.html">Edit profile</a>
-                    <a class="dropdown-item" href="./messages-page.html">Messages</a>
+                    <%= link_to 'Messages', home_message_index_path, class: "dropdown-item" %>
+                    <%= link_to 'Find Partners', profiles_path, class:"dropdown-item"%>
                     <%= link_to 'Projects', projects_path, class: "dropdown-item" %>
+                    <%= link_to 'Articles', articles_path, class: "dropdown-item"%>
                     <% if current_user %>
-                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                        <%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"dropdown-item" %>
+                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>   
                     <% else %>
                         <%= link_to 'Sign up' ,  new_user_registration_path, class: "dropdown-item" %>
                         <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
                     <% end %>
-                    <%= link_to 'Articles', articles_path, class: "dropdown-item"%>
+                    
                 </div>
             </div>
             <div class="navbar-translate">
@@ -28,7 +29,7 @@
                     <span class="navbar-toggler-bar bar2"></span>
                     <span class="navbar-toggler-bar bar3"></span>
                 </button>
-                <a class="navbar-brand"  href="#">
+                <a class="navbar-brand"  href="/">
                     Be-My-Partner
                 </a>
             </div>

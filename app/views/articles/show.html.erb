@@ -1,20 +1,49 @@
-<p id="notice"><%= notice %></p>
+<main class="container-section">
+<%= render ("layouts/header") %>
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path ("startup2.jpg") %>);"></div>
+                <h1>Your article</h1>
+            </div>
+        </section>
+    </div>
+  <div class="tab-pane Followers" id="followers" role="tabpanel">
+    <div class="container-fluid">
+        <div class="row">
+       
+          <div class="col-12 col-sm-12">
+     <div class="card">
+       <br/>
+         <div class="card-block">
+    <br/>
+   
+    <%= image_tag "workplace.jpg", class:'card-img' %>
+  
+  <p>
+    <strong>Titre:</strong>
+    <%= @article.title %>
+  </p>
+    </br>
+   
 
-<p>
-  <strong>Titre:</strong>
-  <%= @article.title %>
-</p>
-
-<p>
-  <strong>Contenu:</strong>
-  <%= @article.content %>
-</p>
-
-<%= link_to 'Back', articles_path %>
-
-<% if current_user.id == @article.user_id %>
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<% end %>
-
+  <p>
+    <strong>Contenu:</strong>
+    <%= @article.content %>
+  </p>
+  
+ 
+  <% if current_user.id == @article.user_id %>
+  <%= link_to 'Edit', edit_article_path(@article) %> |
+  <% end %>
+  <%= link_to 'Back', articles_path, class:"card-link" %>
+         </div>
+     </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <%= render ("layouts/footer") %>
+</main>
 
 

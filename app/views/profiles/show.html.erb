@@ -1,11 +1,15 @@
   
-  <main class="container-section">
+<main class="container-section">
 <%= render ("layouts/header") %>
     <div class="wrapper">
         <section class="container-section-banner">
             <div class="page-header page-header-small">
                 <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path ("startup3.jpg") %>);"></div>
+                <% if current_user.id == @profile.user_id %>
                 <h1>Your Profile</h1>
+                <% else %>
+                <h1>Your partner profil</h1>
+                <% end %>
             </div>
         </section>
     </div>
@@ -18,13 +22,18 @@
        <br/>
          <div class="card-block">
     <br/>
-    <%= image_tag @profile.avatar , class: "page-header-image"  %>
-    <h4>Juan Ramirez</h4>
-    <p>
-  <strong>Description:</strong>
-  <%= @profile.description %>
-</p>
+    <% if @profile.avatar.attached? %>
 
+    <%= image_tag @profile.avatar, class: "card-img", style: "max-width:540px; max-heigth: auto" %>
+    
+    
+    <% else %>
+    <%= image_tag "guy-1.jpg", class:'card-img' %>
+    <% end %>
+    <strong><h4><%= @profile.name %></h4></strong>
+   
+
+    
 <p>
   <strong>Compétences:</strong>
   <%= @profile.skills %>
@@ -44,6 +53,14 @@
   <strong>Ville:</strong>
   <%= @profile.city %>
 </p>
+
+<p>
+<strong>Description:</strong>
+<%= @profile.description %>
+</p>
+
+<p>
+
 
       
     

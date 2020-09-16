@@ -1,24 +1,59 @@
-<div class="row">
-  <div class="col-md-9">
-    <ul id="conversations-list">
-      <% @conversations.each do |conversation| %>
-        <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
-      <% end %>
-    </ul>
-  </div>
-
-  <div class="col-md-3">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">User list</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-          <% @users.each do |user| %>
-            <li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
-          <% end %>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
+<body class="profile-page">
+    <!-- Navbar -->
+    <%= render ("layouts/header") %>
+    <!-- End Navbar -->
+    <main class="container-section">
+        <article> 
+            <div class="wrapper">
+                <section class="container-section-banner">
+                    <div class="page-header page-header-messages">
+                        <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path('img20.jpg') %>);"></div>
+                        <h1>Messages</h1>
+                    </div>
+                </section> 
+            </div>
+            </br>
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-2 bg-white">
+                            <div class="border-bottom padding-sm members-title">
+                                <strong>Members</strong>
+                            </div>
+                            </br>
+                            <!-- =============================================================== -->
+                            <!-- member list -->
+                            <ul class="friend-list">
+                            <% @users.each do |user| %>
+                                <li class="active bounceInDown">   
+                                       <%= image_tag 'guy-1.jpg', class: "img-circle" %> 
+                                        <div class="friend-name">   
+                                            <strong><%= user.id %></strong>
+                                        </div>
+                                        <div class="last-message text-muted">Hello, Are you there?</div>
+                                        <small class="time text-muted">Just now</small>
+                                        <small class="chat-alert badge badge-danger">1</small>
+                                        <%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %>
+                                </li>
+                                </br>   
+                              <% end %>
+                                   
+                            </ul>
+                        </div>
+                        
+                        <!--=========================================================-->
+                        <!-- selected chat -->
+                        <div class="col-md-10">
+                          <ul  id="conversations-list">
+                            <% @conversations.each do |conversation| %>
+                              <%= render 'conversations/conversation', conversation: conversation, user: current_user %>
+                            <% end %>
+                          </ul>
+                        </div>       
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <%= render("layouts/footer") %>
+</body>

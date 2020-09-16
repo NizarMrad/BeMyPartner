@@ -1,5 +1,7 @@
-<h1>Nouvel article</h1>
+<%= render "layouts/header" %>
 
 <%= render 'form', article: @article %>
 
 <%= link_to 'Back', articles_path %>
+
+<%= render("layouts/footer") %>
