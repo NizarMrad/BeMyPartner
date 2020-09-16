@@ -47,3 +47,13 @@
   padding-left: 0px;
   list-style: none;
 }
+
+.media-body {
+  margin-left: 5px;
+}
+
+.card-img-profil {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+}
