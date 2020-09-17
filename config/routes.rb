@@ -1,5 +1,6 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
+Rails.application.routes.draw do
   get 'home_message/index'
   resources :articles
   resources :conversations, only: [:create] do
@@ -16,10 +17,9 @@ Rails.application.routes.draw do
   get 'invitations/create'
   get 'invitations/destroy'
 
- mount ActionCable.server, at: '/cable' 
+  mount ActionCable.server, at: '/cable'
 
   root to: 'pages#home'
   devise_for :users
   resources :charges
-
 end

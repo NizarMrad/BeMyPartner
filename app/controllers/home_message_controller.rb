@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HomeMessageController < ApplicationController
   def index
     session[:conversations] ||= []
@@ -5,7 +7,5 @@ class HomeMessageController < ApplicationController
     @users = User.all.where.not(id: current_user)
     @conversations = Conversation.includes(:recipient, :messages)
                                  .find(session[:conversations])
-    
   end
-  
 end

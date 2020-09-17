@@ -62,7 +62,7 @@
                             
                         <div class="tab-content">
                             <div class="tab-pane active" id="home" role="tabpanel">
-                            <%= Article.all.each do |article| %>
+                            <% Article.all.each do |article| %>
                                 <div class="media Tweets">
                                 <%= image_tag('workplace.jpg', class:"mr-3 rounded-circle img-flex", alt: "Generic placeholder image") %>
                                     <div class="media-body">
@@ -78,7 +78,7 @@
                             <div class="tab-pane Follow" id="following" role="tabpanel">
                                 <div class="container-fluid">
                                     <div class="row">
-                                    <%= Project.all.each do |project| %>
+                                    <% Project.all.each do |project| %>
                                         <div class="col-12 col-sm-6">
                                             <div class="card">
                                                 <%= image_tag 'startup2.jpg',class: "card-img-top",   alt: "Card image cap"  %>
@@ -122,29 +122,56 @@
                                                     <% else %>
                                                     <p class="card-text">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum</p>
                                                     <% end %>
-                                                    <a href="#" class="btn btn-primary btn-round btn-lg">Follow</a>
+                                                    <%= link_to 'Show', profile , class:"btn btn-primary btn-round btn-sm"%>
                                                 </div>
                                             </div>
                                         </div>
+                                    <% end %>
+                                    <% current_user.pending_invitations.each do |invitation| %>
+                                      <li>
+                                        <%= User.find(invitation.user_id).email %>
+                                        <%= link_to 'Accept Invitation',
+                                        invitations_update_path(invitation_id: invitation.id) %>
+                                        <%= link_to 'Reject Invitation',
+                                        invitations_destroy_path(invitation_id: invitation.id) %>
+                                      </li>
+                                        <% end %>
+                                        <% current_user.friends.each do |friend| %>
+                                      <li>
+                                        <%= friend.email %>
                                     <% end %>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane" id="likes" role="tabpanel">
-                                <div class="media Tweets">
-                                    <img class="mr-3 rounded-circle img-flex"  alt="Generic placeholder image">
-                                    <div class="media-body">
-                                        <h5 class="mt-0">Media heading</h5>
-                                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+                            <% current_user.friends.each do |friend| %>
+                                <div class="card mb-3 ml-10" style="max-width: 540px;">
+                                    <div class="row no-gutters">
+                                            <div class="col-md-3">
+                                              <% if friend.profile.avatar.attached? %>
+                                              <%= image_tag friend.profile.avatar, class: "card-img" %>
+                                              <% else %>
+                                              <%= image_tag "woman-1.jpg", class:'card-img' %>
+                                              <% end %>
+                                            </div>
+                                            <div class="col-md-9">
+                                              <div class="card-body ml-1">
+                                                  <h5 class="card-title"><strong><%= friend.profile.name %></strong></h5>
+                                                  <p class="card-text"><strong>Age :</strong> <%= friend.profile.age %> | <strong>Ville :</strong> <%= friend.profile.city %> | <strong>Domaine :</strong> <%= friend.profile.skills %></p>
+                                                  <p class="card-text"><%= friend.profile.description %></p>
+                                                  <%= link_to "Linkedin", "#{friend.profile.linkedin_url}", target: "_blank", rel: "nofollow" %>
+                                              </div>
+                                            </div>
                                     </div>
                                 </div>
-                            </div>
+                                <% end %>
+                        </div>
                         </div>
                     </div>
 
                     <div class=" col-12 col-sm-3 col-md-3 col-lg-3 col-lx-3 hidden-sm-dow">
                         <div class="sidebar">
-                            <h5>People to follow</h5>
+                            <h5>Les profiles à suivre</h5>
                             <div class="container-fluid"> 
                                 <div class="row">
                                 <% @profiles.each do |profile| %>
