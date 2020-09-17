@@ -1,5 +1,3 @@
-ARTICLE : 
-
 <main class="container-section">
   <%= render ("layouts/header") %>
     <div class="wrapper">
@@ -26,9 +24,12 @@ ARTICLE :
                   <h4><strong> <%= article.title %></strong> </h4>                
                   <p class="card-text"><strong> Article content:</strong>  <%= article.content %></p>
                   <div class="card-body">
-                    <%= link_to 'Show', article, class: "btn btn-warning" %>
+                    <% if current_user == article.user_id %>
                     <%= link_to 'Edit', edit_article_path(article), class: "btn btn-info" %>
                     <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                    <% else %>
+                    <%= link_to 'Show', article, class: "btn btn-warning" %>
+                    <% end %>
                   </div>        
                 </div>
              </div>

@@ -23,16 +23,18 @@
                             <% else %>
                             <%= image_tag "guy-1.jpg", class:'photo-container' %>
                             <% end %>
-                            <h3 class="title">john Doe</h3>
-                            
+                            <% if current_user.profile.name %>
+                            <h3 class="title"><%= current_user.profile.name %></h3>
+                            <% else %>
+                            <h3 class="title">J.Doe</h3>
+                            <% end %>
                             <a href="#button" class="btn btn-primary btn-round btn-lg">button à linker avec edit profile</a>
                             <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Linkedin">
                                 <%= image_tag('linkedin.png') %>
                             </a>
                             <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Instagram">
                                 <%= image_tag('twitter.png') %>
-                            </a>
-                            
+                            </a>    
                         </div>
 
                     </div>
@@ -64,7 +66,7 @@
                             <div class="tab-pane active" id="home" role="tabpanel">
                             <% Article.all.each do |article| %>
                                 <div class="media Tweets">
-                                <%= image_tag('workplace.jpg', class:"mr-3 rounded-circle img-flex", alt: "Generic placeholder image") %>
+                                <%= image_tag('workplace.jpg', class:"mr-3  img-flex", alt: "Generic placeholder image") %>
                                     <div class="media-body">
                                         <h5 class="mt-0"><%= article.title %></h5>
                                         <%= article.content %>

@@ -3409,13 +3409,13 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link {
-  color: #b8b8b8;
+  color: black;
   margin: 0;
   margin-right: 5px;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 16px;
   padding: 11px 23px;
   line-height: 1.5;
 }
@@ -3425,7 +3425,7 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link.active {
-  border: 1px solid #b8b8b8;
+  border: 1px solid black;
   border-radius: 30px;
 }
 
