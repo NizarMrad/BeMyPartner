@@ -1,12 +1,14 @@
+ARTICLE : 
+
 <main class="container-section">
-<%= render ("layouts/header") %>
+  <%= render ("layouts/header") %>
     <div class="wrapper">
-        <section class="container-section-banner">
-            <div class="page-header page-header-small">
-                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path("startup2.jpg") %>);"></div>
-                <h1>Articles</h1>
-            </div>
-        </section>
+      <section class="container-section-banner">
+        <div class="page-header page-header-small">
+            <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path("startup2.jpg") %>);"></div>
+            <h1>Articles</h1>
+        </div>
+      </section>
     </div>
     <div class="porfile-content">
       <h6><%= link_to 'New Article', new_article_path, class: "link" %></h6>
@@ -15,29 +17,26 @@
   <div class="tab-pane Followers" id="followers" role="tabpanel">
     <div class="container-fluid">
         <div class="row">
-        <% @articles.each do |article| %>
-          <div class="col-12 col-sm-6">
-           <div class="card">
-            <%= image_tag ("workplace.jpg"), class: "card-img-top" %>
-              <div class="card-block">
+          <% @articles.each do |article| %>
+            <div class="col-12 col-sm-6">
+              <div class="card">
+               <%= image_tag ("workplace.jpg"), class: "card-img-top" %>
+                <div class="card-block">
                   <img class="img-profile-folow" src="img/Friends/woman-1.jpg" alt="">
-                    <h4><strong> <%= article.title %></strong> </h4>
-                
-        <p class="card-text"><strong> Article content:</strong>  <%= article.content %></p>
-
-        <div class="card-body">
-          <%= link_to 'Show', article, class: "card-link" %>
-          <%= link_to 'Edit', edit_article_path(article), class: "card-link" %>
-          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
-        </div>
-        
-        </div>
-      </div>
-  </div>
+                  <h4><strong> <%= article.title %></strong> </h4>                
+                  <p class="card-text"><strong> Article content:</strong>  <%= article.content %></p>
+                  <div class="card-body">
+                    <%= link_to 'Show', article, class: "btn btn-warning" %>
+                    <%= link_to 'Edit', edit_article_path(article), class: "btn btn-info" %>
+                    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+                  </div>        
+                </div>
+             </div>
+            </div>
           <% end %>
         </div>
+      </div>
     </div>
   </div>
   <%= render ("layouts/footer") %>
 </main>
-
