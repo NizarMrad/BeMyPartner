@@ -33,9 +33,9 @@
         <p class="card-text"><strong> Project description:</strong>  <%= project.description %></p>
 
         <div class="card-body">
-          <%= link_to 'Show', project, class: "card-link" %>
-          <%= link_to 'Edit', edit_project_path(project), class: "card-link" %>
-          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
+          <%= link_to 'Show', project, class: "btn btn-warning" %>
+          <%= link_to 'Edit', edit_project_path(project),class: "btn btn-info" %>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
         </div>
         
         </div>
