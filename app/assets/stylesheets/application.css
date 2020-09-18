@@ -53,8 +53,8 @@
 }
 
 .card-img-profil {
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  height: 25vw;
   object-fit: cover;
 }
 
