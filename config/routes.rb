@@ -19,7 +19,11 @@ Rails.application.routes.draw do
   get 'admin/index'
 
   mount ActionCable.server, at: '/cable'
-
+  scope "admin" do
+    get "users", to: "users#index"
+    get "users/:id", to: "users#show", as: "user"
+    delete "users/:id", to: "users#destroy"
+  end
   root to: 'pages#home'
   devise_for :users
   resources :charges
