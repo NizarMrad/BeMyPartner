@@ -25,7 +25,7 @@
                         </div>
                         <% end %>
                         <label class="btn btn-primary">
-                            Upload new image
+                           Ajouter une photo de profil
                             <span style="display:none;">
                             <%= form.file_field :avatar%>
                             </span>
@@ -49,12 +49,12 @@
                         <div class="form-group row">
                             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <label for="LastName" class="p2">Name</label>
-                                <%= form.text_field :name, class: "form-control", placeholder: "Name" %>
+                                <%= form.text_field :name, class: "form-control", placeholder: "Prénom" %>
                                 <span class="error"></span>
                             </div>
                             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <label for="Name" class="p2">Skills</label>
-                                <%= form.text_field :skills, class: "form-control", placeholder: "Skills" %>
+                                <%= form.text_field :skills, class: "form-control", placeholder: "Compétences" %>
                                 <span class="error"></span>
                             </div>
                             
@@ -62,7 +62,7 @@
                         <div class="form-group row">
                             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                                 <label for="Name" class="p2">City</label>
-                                <%= form.text_field :city, class: "form-control", placeholder: "City" %>
+                                <%= form.text_field :city, class: "form-control", placeholder: "Ville" %>
                                 <span class="error"></span>
                             </div>
                             <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
@@ -74,14 +74,14 @@
                         <div class="form-group row">
                         <div class="col-12 col-sm-6 col-md-6 col-lg-12 col-xl-12">
                                 <label for="LastName" class="p2">Linkedin</label>
-                                <%= form.text_field :linkedin_url, class: "form-control", placeholder: "Linkedin url" %>
+                                <%= form.text_field :linkedin_url, class: "form-control", placeholder: "Linkedin " %>
                                 <span class="error"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                 <label for="Descropcion" class="p2">Description</label>
-                                <%= form.text_area :description, placeholder: "Tell to your futur partner about your profil", class: "form-control", cols: "30", rows: "3" %>
+                                <%= form.text_area :description, placeholder: "Dites en plus sur vous à vos futurs collaborateurs", class: "form-control", cols: "30", rows: "3" %>
                                 <span class="error"></span>
                             </div>
                         </div>                     

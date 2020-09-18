@@ -128,7 +128,7 @@
                                                     <% end %>
                                                     
 
-                                                    <%= link_to 'Show', profile , class:"btn btn-primary btn-round btn-sm"%>
+                                                    <%= link_to 'Voir', profile , class:"btn btn-primary btn-round btn-sm"%>
                                                 </div>
                                             </div>
                                         </div>
@@ -136,9 +136,9 @@
                                     <% current_user.pending_invitations.each do |invitation| %>
                                       <li>
                                         <%= User.find(invitation.user_id).profile.name %>
-                                        <%= link_to 'Accept Invitation',
+                                        <%= link_to 'Acceptez',
                                         invitations_update_path(invitation_id: invitation.id) %>
-                                        <%= link_to 'Reject Invitation',
+                                        <%= link_to 'Rejetez',
                                         invitations_destroy_path(invitation_id: invitation.id) %>
                                       </li>
                                         <% end %>
@@ -177,7 +177,7 @@
 
                     <div class=" col-12 col-sm-3 col-md-3 col-lg-3 col-lx-3 hidden-sm-dow">
                         <div class="sidebar">
-                            <h5>Vos amis </h5>
+                            <h5>Vos futurs partenaires </h5>
                             <div class="container-fluid"> 
                                 <div class="row">
 

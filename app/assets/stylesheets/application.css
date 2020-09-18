@@ -73,7 +73,6 @@
   object-fit: contain;
 }
 
-
 .logo-app {
   width: 100px;
   height: 100px;
@@ -86,8 +85,10 @@
   object-position: 50% 50%;
 }
 
-.fivelines{
-  margin:20px;
+
+.fivelines {
+  margin: 20px;
+
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -105,6 +106,5 @@ table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
-bottom: .5em;
+  bottom: 0.5em;
 }
-
