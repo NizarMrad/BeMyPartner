@@ -28,7 +28,9 @@
                             <% else %>
                             <h3 class="title">J.Doe</h3>
                             <% end %>
-                            <a href="#button" class="btn btn-primary btn-round btn-lg">button à linker avec edit profile</a>
+                             
+                               <%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"btn btn-primary" %>
+                            
                             <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Linkedin">
                                 <%= image_tag('linkedin.png') %>
                             </a>
@@ -69,9 +71,9 @@
                                 <%= image_tag('workplace.jpg', class:"mr-3  img-flex", alt: "Generic placeholder image") %>
                                     <div class="media-body">
                                         <h5 class="mt-0"><%= article.title %></h5>
-                                        <%= article.content %>
+                                    <p class='fivelines'> <%= article.content %></p>
                                         <br/>
-                                        <%= link_to 'Show', article %> 
+                                        <%= link_to 'Lire plus', article %> 
                                     </div>
                                 </div>
                                 <% end %>

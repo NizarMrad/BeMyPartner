@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'invitations/update'
   get 'invitations/create'
   get 'invitations/destroy'
+  get 'admin/index'
 
   mount ActionCable.server, at: '/cable'
 
