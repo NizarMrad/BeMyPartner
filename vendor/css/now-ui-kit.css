@@ -1540,7 +1540,9 @@ fieldset[disabled] .btn.active {
 }
 
 .btn-primary {
+
   background-color: #00405b;
+
   color: #ffffff;
 }
 
@@ -3229,7 +3231,6 @@ body {
 
 .dropdown-toggle[aria-expanded="true"]:after {
   filter: "progid: DXImageTransform.Microsoft.BasicImage(rotation=2)";
-
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
@@ -3410,13 +3411,17 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link {
+
   color: #00405b;
+
   margin: 0;
   margin-right: 5px;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 30px;
+
   font-size: 16px;
+
   padding: 11px 23px;
   line-height: 1.5;
 }
@@ -3426,7 +3431,9 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link.active {
+
   border: 1px solid #00405b;
+
   border-radius: 30px;
 }
 
@@ -3595,10 +3602,12 @@ body {
 }
 
 .navbar.navbar-transparent {
+
   /* background-color: transparent !important; */
   box-shadow: none;
   color: #ffffff;
   /* padding-top: 20px; */
+
 }
 
 .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item) {
@@ -3627,7 +3636,9 @@ body {
 }
 
 .bg-primary {
+
   background-color: #003060 !important;
+
 }
 
 .bg-info {

@@ -12,9 +12,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20_200_916_092_436) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
+
 
   create_table 'active_storage_attachments', force: :cascade do |t|
     t.string 'name', null: false
@@ -24,6 +27,27 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.datetime 'created_at', null: false
     t.index ['blob_id'], name: 'index_active_storage_attachments_on_blob_id'
     t.index %w[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness', unique: true
+
+
+  create_table "profiles", force: :cascade do |t|
+    t.text "description"
+    t.string "skills"
+    t.string "linkedin_url"
+    t.integer "age"
+    t.string "city"
+    t.integer "user_id"
+    t.integer "sector_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+
+  create_table "budgetisations", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "budget_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["budget_id"], name: "index_budgetisations_on_budget_id"
+    t.index ["project_id"], name: "index_budgetisations_on_project_id"
+
   end
 
   create_table 'active_storage_blobs', force: :cascade do |t|
@@ -37,7 +61,7 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.index ['key'], name: 'index_active_storage_blobs_on_key', unique: true
   end
 
-<<<<<<< HEAD
+
   create_table 'articles', force: :cascade do |t|
     t.string 'title'
     t.integer 'sector_id'
@@ -46,15 +70,7 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['user_id'], name: 'index_articles_on_user_id'
-=======
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_articles_on_user_id"
->>>>>>> 5a540d2e328b0f37769aabcdc4deb2de2ba4b60b
+
   end
 
   create_table 'budgetisations', force: :cascade do |t|
@@ -92,6 +108,7 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.index ['sender_id'], name: 'index_conversations_on_sender_id'
   end
 
+
   create_table 'invitations', force: :cascade do |t|
     t.bigint 'user_id'
     t.integer 'friend_id'
@@ -111,7 +128,7 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.index ['user_id'], name: 'index_messages_on_user_id'
   end
 
-<<<<<<< HEAD
+
   create_table 'profiles', force: :cascade do |t|
     t.text 'description'
     t.string 'skills'
@@ -137,7 +154,7 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['user_id'], name: 'index_projects_on_user_id'
-=======
+
   create_table "profiles", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -152,19 +169,7 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string "description"
-    t.string "files"
-    t.text "title"
-    t.string "sector"
-    t.integer "budget"
-    t.string "city"
-    t.string "profile_needed"
-    t.bigint "user_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_projects_on_user_id"
->>>>>>> 5a540d2e328b0f37769aabcdc4deb2de2ba4b60b
+
   end
 
   create_table 'sectors', force: :cascade do |t|
@@ -186,6 +191,7 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
+
   add_foreign_key 'active_storage_attachments', 'active_storage_blobs', column: 'blob_id'
   add_foreign_key 'articles', 'users'
   add_foreign_key 'budgetisations', 'budgets'
@@ -197,4 +203,5 @@ ActiveRecord::Schema.define(version: 20_200_916_092_436) do
   add_foreign_key 'messages', 'users'
   add_foreign_key 'profiles', 'users'
   add_foreign_key 'projects', 'users'
+
 end
