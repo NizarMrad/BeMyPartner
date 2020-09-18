@@ -72,3 +72,15 @@
   height: 150px;
   object-fit: contain;
 }
+
+.logo-app {
+  width: 100px;
+  height: 100px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
