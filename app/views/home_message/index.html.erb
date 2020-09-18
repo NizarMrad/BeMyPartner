@@ -24,7 +24,7 @@
                             <!-- =============================================================== -->
                             <!-- member list -->
                             <ul class="friend-list">
-                            <% @users.each do |user| %>
+                            <% current_user.friends.each do |user| %>
                                 <li class="active bounceInDown">   
                                        <%= image_tag 'guy-1.jpg', class: "img-circle" %> 
                                         <div class="friend-name">   
