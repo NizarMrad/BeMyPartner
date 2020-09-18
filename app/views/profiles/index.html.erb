@@ -115,7 +115,7 @@
                                         <div class="col-12 col-sm-6">
                                             <div class="card">
                                                 <% if profile.avatar.attached? %>
-                                                <%= image_tag profile.avatar, class: 'card-img-profil' %>
+                                                <%= image_tag profile.avatar, class: 'card-img-pr' %>
                                                 <% else %>
                                                 <%= image_tag "woman-1.jpg", class:'card-img-profil' %>
                                                 <% end %>
@@ -132,17 +132,17 @@
                                                     <% end %>
                                                     
 
-                                                    <%= link_to 'Show', profile , class:"btn btn-primary btn-round btn-sm"%>
+                                                    <%= link_to 'Voir', profile , class:"btn btn-primary btn-round btn-sm"%>
                                                 </div>
                                             </div>
                                         </div>
                                     <% end %>
                                     <% current_user.pending_invitations.each do |invitation| %>
                                       <li>
-                                        <%= User.find(invitation.user_id).email %>
-                                        <%= link_to 'Accept Invitation',
+                                        <%= User.find(invitation.user_id).profile.name %>
+                                        <%= link_to 'Acceptez',
                                         invitations_update_path(invitation_id: invitation.id) %>
-                                        <%= link_to 'Reject Invitation',
+                                        <%= link_to 'Rejetez',
                                         invitations_destroy_path(invitation_id: invitation.id) %>
                                       </li>
                                         <% end %>
@@ -181,32 +181,22 @@
 
                     <div class=" col-12 col-sm-3 col-md-3 col-lg-3 col-lx-3 hidden-sm-dow">
                         <div class="sidebar">
-                            <h5>Vos amis </h5>
+                            <h5>Vos futurs partenaires </h5>
                             <div class="container-fluid"> 
                                 <div class="row">
-                                <% current_user.friends.each  do |profile| %>
+
+                                <% current_user.pending_invitations.each do |invitation| %>
+
                                     <div class="col-12">
-                                        <div class="media">
-                                            <% if profile.avatar.attached? %>
-                                            <%= image_tag profile.avatar %>
-                                            <% else %>
-                                            <%= image_tag "woman-1.jpg", class:'card-img-top', alt: "Card image cap" %>
-                                            <% end %>
+                                        <div class="media">   
                                             <div class="media-body">
-                                            <% if profile.name.present? %>
-                                                <h6 class="mt-0"><%= profile.name %></h6>
-                                            <% else %>
-                                            <h6 class="mt-0">J.Doe</h6>
-                                            <% end %>
-                                            <% if profile.skills.present? %>
-                                                <span><%= profile.skills %> </span>
-                                            <% else %>
-                                            <span>Work unknown </span>
-                                            <% end %>
-                                            
+                                                <h6 class="mt-0"><%= User.find(invitation.user_id).profile.name %> </h6>
+                                                <%= User.find(invitation.user_id).profile.skills %>
                                             </div>
-                                            <%= link_to 'Show', profile , class:"btn btn-primary btn-round btn-sm"%>
                                         </div>
+                                        <%= link_to 'Accept Invitation',invitations_update_path(invitation_id: invitation.id), class:"btn btn-primary btn-round btn-sm" %>
+                                          
+                                        <%= link_to 'Reject Invitation',invitations_destroy_path(invitation_id: invitation.id),class:"btn btn-danger btn-round btn-sm" %>
                                         <hr>
                                     </div>
                                   <% end %>                                 

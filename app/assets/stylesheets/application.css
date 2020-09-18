@@ -53,8 +53,8 @@
 }
 
 .card-img-profil {
-  width: 400px;
-  height: 300px;
+  width: 100%;
+  height: 25vw;
   object-fit: cover;
 }
 
@@ -72,8 +72,23 @@
   height: 150px;
   object-fit: contain;
 }
-.fivelines{
-  margin:20px;
+
+.logo-app {
+  width: 100px;
+  height: 100px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+
+.fivelines {
+  margin: 20px;
+
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -91,5 +106,5 @@ table.dataTable thead .sorting_desc:after,
 table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
-bottom: .5em;
+  bottom: 0.5em;
 }
