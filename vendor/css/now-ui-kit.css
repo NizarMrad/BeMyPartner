@@ -1540,7 +1540,7 @@ fieldset[disabled] .btn.active {
 }
 
 .btn-primary {
-  background-color: #f96332;
+  background-color: #00405b;
   color: #ffffff;
 }
 
@@ -3029,7 +3029,8 @@ h6 {
 }
 
 a {
-  color: #f96332;
+  color: #00405b;
+  font-weight: bold;
 }
 
 a:hover,
@@ -3409,7 +3410,7 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link {
-  color: black;
+  color: #00405b;
   margin: 0;
   margin-right: 5px;
   background-color: transparent;
@@ -3425,7 +3426,7 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link.active {
-  border: 1px solid black;
+  border: 1px solid #00405b;
   border-radius: 30px;
 }
 
@@ -3626,7 +3627,7 @@ body {
 }
 
 .bg-primary {
-  background-color: #f96332 !important;
+  background-color: #003060 !important;
 }
 
 .bg-info {
@@ -4964,7 +4965,9 @@ Created using IcoMoon - icomoon.io
 }
 
 .footer.footer-default {
-  background-color: #f2f2f2;
+  background-color: #003060;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .footer nav {

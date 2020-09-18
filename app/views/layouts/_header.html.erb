@@ -8,15 +8,14 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <%= link_to 'Profile', profiles_path, class:"dropdown-item"%>
-                    <%= link_to 'Messages', home_message_index_path, class: "dropdown-item" %>
-                    <%= link_to 'Find Partners', profiles_path, class:"dropdown-item"%>
-                    <%= link_to 'Projects', projects_path, class: "dropdown-item" %>
+                    <%= link_to 'Projets', projects_path, class: "dropdown-item" %>
                     <%= link_to 'Articles', articles_path, class: "dropdown-item"%>
                     <% if current_user %>
+                        <%= link_to 'Messages', home_message_index_path, class: "dropdown-item" %>
                         <%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"dropdown-item" %>
-                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>   
+                        <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "dropdown-item" %>   
                     <% else %>
-                        <%= link_to 'Sign up' ,  new_user_registration_path, class: "dropdown-item" %>
+                        <%= link_to "S'inscrire" ,  new_user_registration_path, class: "dropdown-item" %>
                         <%= link_to 'Sign in', new_user_session_path, class: "dropdown-item" %>
                     <% end %>
                     
@@ -32,54 +31,43 @@
                 <a class="navbar-brand"  href="/">
                     <strong>Be-My-Partner</strong>
                 </a>
+               
             </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/assets/imgages/startup.jpg">
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/assets/imgages/startup.jpg"></div>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link"  href="./index.html">
-                            <p class="hidden-lg-up">Profile</p>
-                        </a>
+                    <li class="nav-item">    
+                    <div class="nav-link"> <%= link_to 'Profile', profiles_path, class:"hidden-lg-up"%> </div>   
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./friends.html">
-                            <p class="hidden-lg-up">Find friends</p>
-                        </a>
+                      <div class="nav-link"><%= link_to 'Messages', home_message_index_path, class: "hidden-lg-up" %></div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./edit-profile.html">
-                            <p class="hidden-lg-up">Edit profile</p>
-                        </a>
+                        <div class="nav-link"><%= link_to 'Projets', projects_path, class: "hidden-lg-up" %></div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./chat.html">
-                            <p class="hidden-lg-up">Messages</p>
-                        </a>
+                        <div class="nav-link"><%= link_to 'Articles', articles_path, class: "hidden-lg-up "%></div>
+                    </li>
+                    <% if current_user %>
+                    <li class="nav-item">
+                        <div class="nav-link"><%= link_to 'Messages', home_message_index_path, class: "hidden-lg-up" %></div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./components.html">
-                            <p class="hidden-lg-up">Components</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="./login-page.html">
-                            <p class="hidden-lg-up">Login</p>
-                        </a>
+                        <div class="nav-link"><%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"hidden-lg-up " %></div>
                         
                     </li>
                     <li class="nav-item">
-                            <%= link_to 'Sign in', new_user_session_path, class: "hidden-lg-up" %>
-
+                        <div class="nav-link"> <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "hidden-lg-up" %></div>
                     </li>
+                    <% else %>
                     <li class="nav-item">
-                        <a class="nav-link" href="./landing-page.html">
-                            <p class="hidden-lg-up">Landing page</p>
-                        </a>
+                        <div class="hidden-lg-up"><%= link_to "S'inscrire" ,  new_user_registration_path, class: "nav-link" %></div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./nucleo-icons.html">
                             <p class="hidden-lg-up">Icons</p>
                         </a>
                     </li>
+                    <% end %>
                 </ul>
             </div>
         </div>
