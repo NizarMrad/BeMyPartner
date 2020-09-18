@@ -992,6 +992,7 @@
   background-image: -o-linear-gradient(to bottom, #fdd49a, #fdf59a);
   background-image: linear-gradient(to bottom, #fdd49a, #fdf59a);
   background-repeat: repeat-x;
+
   filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr='#fdd49a', endColorstr='#fdf59a', GradientType=0)";
   border-color: #fdf59a #fdf59a #fbed50;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -1069,6 +1070,7 @@
   background-image: -o-linear-gradient(to bottom, #f3c17a, #f3e97a);
   background-image: linear-gradient(to bottom, #f3c17a, #f3e97a);
   background-repeat: repeat-x;
+
   filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr='#f3c17a', endColorstr='#f3e97a', GradientType=0)";
   border-color: #f3e97a #f3e97a #edde34;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -1130,6 +1132,7 @@
   background-image: -o-linear-gradient(to bottom, #b3b3b3, #808080);
   background-image: linear-gradient(to bottom, #b3b3b3, #808080);
   background-repeat: repeat-x;
+
   filter: "progid: DXImageTransform.Microsoft.gradient(startColorstr='#b3b3b3', endColorstr='#808080', GradientType=0)";
   border-color: #808080 #808080 #595959;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
@@ -1537,7 +1540,9 @@ fieldset[disabled] .btn.active {
 }
 
 .btn-primary {
-  background-color: #f96332;
+
+  background-color: #00405b;
+
   color: #ffffff;
 }
 
@@ -3026,7 +3031,8 @@ h6 {
 }
 
 a {
-  color: #f96332;
+  color: #00405b;
+  font-weight: bold;
 }
 
 a:hover,
@@ -3405,13 +3411,17 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link {
-  color: #b8b8b8;
+
+  color: #00405b;
+
   margin: 0;
   margin-right: 5px;
   background-color: transparent;
   border: 1px solid transparent;
   border-radius: 30px;
-  font-size: 14px;
+
+  font-size: 16px;
+
   padding: 11px 23px;
   line-height: 1.5;
 }
@@ -3421,7 +3431,9 @@ body {
 }
 
 .nav-tabs > .nav-item > .nav-link.active {
-  border: 1px solid #b8b8b8;
+
+  border: 1px solid #00405b;
+
   border-radius: 30px;
 }
 
@@ -3590,10 +3602,12 @@ body {
 }
 
 .navbar.navbar-transparent {
-  background-color: transparent !important;
+
+  /* background-color: transparent !important; */
   box-shadow: none;
   color: #ffffff;
-  padding-top: 20px;
+  /* padding-top: 20px; */
+
 }
 
 .navbar.bg-white:not(.navbar-transparent) a:not(.dropdown-item) {
@@ -3622,7 +3636,9 @@ body {
 }
 
 .bg-primary {
-  background-color: #f96332 !important;
+
+  background-color: #003060 !important;
+
 }
 
 .bg-info {
@@ -4960,7 +4976,9 @@ Created using IcoMoon - icomoon.io
 }
 
 .footer.footer-default {
-  background-color: #f2f2f2;
+  background-color: #003060;
+  color: #ffffff;
+  font-weight: bold;
 }
 
 .footer nav {
@@ -5993,7 +6011,7 @@ Created using IcoMoon - icomoon.io
 }
 
 .Tweets img {
-  width: 70px;
+  width: 80px;
 }
 
 .Follow .img-profile-folow {
