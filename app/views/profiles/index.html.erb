@@ -31,6 +31,10 @@
                              
                                <%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"btn btn-primary" %>
                             
+                            
+
+
+
                             <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Linkedin">
                                 <%= image_tag('linkedin.png') %>
                             </a>
@@ -213,10 +217,7 @@
                 </div>
             </div>
         </div>
-        <%= render("layouts/footer") %>
 
-
- 
   <div class="section section-javascript" id="javascriptComponents">
                 <div class="container">
                     <div class="row" id="modals">
@@ -251,7 +252,7 @@
                     <div class="modal-body">
                         <p>Vous souhaitez être encadré de A à Z, de la creation du business model au lancement du projet, c'est possible ! Prenez rendez vous avec notre équipe qui reviendra vers vous afin de répondre à vos besoins.
                         </p>
-                       
+
                     </div>
                     <div class="modal-footer">
                       <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
@@ -262,14 +263,16 @@
                          data-label="Demander un rendez vous"
                          data-currency="eur"
                          data-locale="auto">
-                           
+
                          </script>                     
-                         
-                    
-                         
+
+
+
+
 </div>
 <% end %>
 
+        <%= render("layouts/footer") %>
     </div>
     </body>
                 
