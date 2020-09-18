@@ -1,0 +1,52 @@
+<main class="container-section">
+<%= form_with(model: article, local: true) do |form| %>
+  <% if article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<article>
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path ("startup.jpg") %>);"></div>
+                <h1>Edit article</h1>
+            </div>
+        </section>
+    </div>
+    </br> 
+    <div class="section">
+        <div class="container">
+            <div class="row">                    
+                <div class="col-12">
+                    <form action="" class="edit-porfile">
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <%= form.label :title,"Titre",class:"p2" ,id:"Name" %>
+                                <%= form.text_field :title ,class:"form-control"%>
+                                <span class="error"></span>
+                            </div>                                   
+                        </div>                              
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <%= form.label :contenu ,"contenu",class:"p2", id:"Descropcion", cols:"30", rows:"3" %>
+                                    <%= form.text_area :content ,class:"form-control"%>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                          <%= form.submit "Créé l'article",class:"btn btn-primary" %>         
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</article> 
+<% end %>
+</main> 

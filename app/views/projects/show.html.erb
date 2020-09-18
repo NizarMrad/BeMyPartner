@@ -1,39 +1,62 @@
-<p id="notice"><%= notice %></p>
+<main class="container-section">
+<%= render ("layouts/header") %>
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path ("startup2.jpg") %>);"></div>
+                <h1>Your project</h1>
+            </div>
+        </section>
+    </div>
+  <div class="tab-pane Followers" id="followers" role="tabpanel">
+    <div class="container-fluid">
+        <div class="row">
+       
+          <div class="col-12 col-sm-12">
+     <div class="card">
+       <br/>
+         <div class="card-block">
+    <br/>
+   
+    <%= image_tag "workplace.jpg", class:'card-img' %>
+  
+    <strong><h4>Juan Ramirez</h4></strong>
+    </br>
+   
 
-<p>
-  <strong>Title:</strong>
-  <%= @project.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @project.title %>
+  </p>
+   
+  <p>
+    <strong>Profile needed:</strong>
+    <%= @project.profile_needed %>
+  </p>
+  
+  <p>
+    <strong>City:</strong>
+    <%= @project.city %>
+  </p>
+  
+  <p>
+    <strong>Files:</strong>
+    <%= @project.files %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+  <p>
+    <strong>Description:</strong>
+    <%= @project.description %>
+  </p>
+ 
+ <%= link_to 'Edit', edit_project_path(@project), class:"card-link" %> 
+ <%= link_to 'Back', projects_path, class:"card-link" %>
+         </div>
+     </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <%= render ("layouts/footer") %>
+</main>
 
-<p>
-  <strong>Budget:</strong>
-  <%= @project.budget_id %>
-</p>
-
-<p>
-  <strong>Profile needed:</strong>
-  <%= @project.profile_needed %>
-</p>
-
-<p>
-  <strong>Files:</strong>
-  <%= @project.files %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @project.city %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @project.user.email %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

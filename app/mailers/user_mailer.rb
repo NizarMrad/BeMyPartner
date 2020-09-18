@@ -1,13 +1,13 @@
+# frozen_string_literal: true
+
 class UserMailer < ApplicationMailer
-  default from: 'no-reply@monsite.fr'
- 
+  default from: 'bemypartner@yopmail.com'
+
   def welcome_email(user)
+    @user = user
 
-    @user = user 
+    @url = 'https://bemypartner-production.herokuapp.com/'
 
- 
-    @url  = 'http://monsite.fr/login' 
-
-    mail(to: @user.email, subject: 'Bienvenue chez nous !') 
+    mail(to: @user.email, subject: 'Bienvenue chez nous !')
   end
 end

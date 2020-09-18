@@ -15,3 +15,94 @@
  *= require css/bootstrap.min.css
  *= require css/now-ui-kit.css
  */
+.messages-style {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.messages-list {
+  max-height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.message-sent {
+  position: relative;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  margin: 5px 20px;
+  padding: 10px;
+  float: right;
+}
+
+.message-received {
+  background-color: #f1f0f0;
+  border-color: #eeeeee;
+  margin: 5px 20px;
+  padding: 10px;
+  float: left;
+}
+
+.friend-list {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.media-body {
+  margin-left: 5px;
+}
+
+.card-img-profil {
+  width: 100%;
+  height: 25vw;
+  object-fit: cover;
+}
+
+.match-image {
+  width: 90px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+}
+
+.article-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+}
+
+.logo-app {
+  width: 100px;
+  height: 100px;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.fivelines {
+  margin: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+  bottom: 0.5em;
+}
