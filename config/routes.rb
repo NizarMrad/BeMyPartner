@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :conversations, only: [:create] do
     member do
-      post :close
+      get :close
     end
     resources :messages, only: [:create]
   end
