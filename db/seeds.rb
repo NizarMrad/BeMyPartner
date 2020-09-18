@@ -14,11 +14,11 @@ require 'faker'
 
 
 3.times do 
-	User.create(
-    	email:Faker::Internet.email(domain: 'yopmail.com'),
-    	password:Faker::Internet.password,
-    	name:Faker::Name.first_name
-    	)
+  User.create(
+    email:Faker::Internet.email(domain: 'yopmail.com'),
+    password:Faker::Internet.password,
+   	name:Faker::Name.first_name
+   	)
 end 
 
 
@@ -43,7 +43,16 @@ end
 end    
 
  
-
+3.times do
+  Project.create(
+    title:Faker::Movie.title, 
+    description:Faker::Lorem.paragraphs(number: 3),
+    user_id:rand(1..3),
+    budget:rand(100..100000),
+    city:Faker::Address.city,
+    profile_needed: Faker::Job.field
+    )
+end   
 
 
   
