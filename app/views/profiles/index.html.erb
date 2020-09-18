@@ -126,6 +126,8 @@
                                                     <% else %>
                                                     <p class="card-text">Le lorem ipsum est, en imprimerie, une suite de mots sans signification utilisée à titre provisoire pour calibrer une mise en page, le texte définitif venant remplacer le faux-texte dès qu'il est prêt ou que la mise en page est achevée. Généralement, on utilise un texte en faux latin, le Lorem ipsum ou Lipsum</p>
                                                     <% end %>
+                                                    
+
                                                     <%= link_to 'Show', profile , class:"btn btn-primary btn-round btn-sm"%>
                                                 </div>
                                             </div>
@@ -175,10 +177,10 @@
 
                     <div class=" col-12 col-sm-3 col-md-3 col-lg-3 col-lx-3 hidden-sm-dow">
                         <div class="sidebar">
-                            <h5>Les profiles à suivre</h5>
+                            <h5>Vos amis </h5>
                             <div class="container-fluid"> 
                                 <div class="row">
-                                <% @profiles.each do |profile| %>
+                                <% current_user.friends.each  do |profile| %>
                                     <div class="col-12">
                                         <div class="media">
                                             <% if profile.avatar.attached? %>
