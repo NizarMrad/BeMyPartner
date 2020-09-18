@@ -33,9 +33,13 @@
         <p class="card-text"><strong> Project description:</strong>  <%= project.description %></p>
 
         <div class="card-body">
-          <%= link_to 'Show', project, class: "card-link" %>
+
+           <% if current_user.present? && current_user.id == project.user_id %>
           <%= link_to 'Edit', edit_project_path(project), class: "card-link" %>
           <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "card-link" %>
+          <% else %>
+          <%= link_to 'Show', project, class: "card-link" %>
+          <% end %>
         </div>
         
         </div>

@@ -26,5 +26,3 @@
 //= require js/plugins/bootstrap-datepicker.js
 //= require js/now-ui-kit.js
 //= require cable
-
-
