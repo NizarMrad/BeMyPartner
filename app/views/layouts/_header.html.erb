@@ -1,0 +1,73 @@
+<nav class="navbar navbar-toggleable-md bg-primary fixed-top navbar-transparent " color-on-scroll="400">
+        <div class="container">
+            <div class="dropdown button-dropdown">
+                <a href="#" class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown">
+                    <span class="button-bar"></span>
+                    <span class="button-bar"></span>
+                    <span class="button-bar"></span>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <%= link_to 'Profile', profiles_path, class:"dropdown-item"%>
+                    <%= link_to 'Projets', projects_path, class: "dropdown-item" %>
+                    <%= link_to 'Articles', articles_path, class: "dropdown-item"%>
+                    <% if current_user %>
+                        <%= link_to 'Messages', home_message_index_path, class: "dropdown-item" %>
+                        <%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"dropdown-item" %>
+                        <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "dropdown-item" %>   
+                    <% else %>
+                        <%= link_to "S'inscrire" ,  new_user_registration_path, class: "dropdown-item" %>
+                        <%= link_to 'Se connecter', new_user_session_path, class: "dropdown-item" %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="navbar-translate">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar bar1"></span>
+                    <span class="navbar-toggler-bar bar2"></span>
+                    <span class="navbar-toggler-bar bar3"></span>
+                </button>
+                <a class="navbar-brand"  href="/">
+                    <strong>Be-My-Partner</strong>
+                </a>
+               
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="/assets/imgages/startup.jpg"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">    
+                    <div class="nav-link"> <%= link_to 'Profile', profiles_path, class:"hidden-lg-up"%> </div>   
+                    </li>
+                    <li class="nav-item">
+                      <div class="nav-link"><%= link_to 'Messages', home_message_index_path, class: "hidden-lg-up" %></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"><%= link_to 'Projets', projects_path, class: "hidden-lg-up" %></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"><%= link_to 'Articles', articles_path, class: "hidden-lg-up "%></div>
+                    </li>
+                    <% if current_user %>
+                    <li class="nav-item">
+                        <div class="nav-link"><%= link_to 'Messages', home_message_index_path, class: "hidden-lg-up" %></div>
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"><%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"hidden-lg-up " %></div>
+                        
+                    </li>
+                    <li class="nav-item">
+                        <div class="nav-link"> <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "hidden-lg-up" %></div>
+                    </li>
+                    <% else %>
+                    <li class="nav-item">
+                        <div class="hidden-lg-up"><%= link_to "S'inscrire" ,  new_user_registration_path, class: "nav-link" %></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./nucleo-icons.html">
+                            <p class="hidden-lg-up">Icons</p>
+                        </a>
+                    </li>
+                    <% end %>
+                </ul>
+            </div>
+        </div>
+    </nav>

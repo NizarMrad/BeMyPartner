@@ -1,12 +1,39 @@
+  
+<main class="container-section">
+<%= render ("layouts/header") %>
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path ("startup3.jpg") %>);"></div>
+                <% if current_user.id == @profile.user_id %>
+                <h1>Your Profile</h1>
+                <% else %>
+                <h1>Your partner profil</h1>
+                <% end %>
+            </div>
+        </section>
+    </div>
+  <div class="tab-pane Followers" id="followers" role="tabpanel">
+    <div class="container-fluid">
+        <div class="row">
+       
+          <div class="col-12 col-sm-12">
+     <div class="card">
+       <br/>
+         <div class="card-block">
+    <br/>
+    <% if @profile.avatar.attached? %>
 
+    <%= image_tag @profile.avatar, class: "card-img", style: "max-width:540px; max-heigth: auto" %>
+    
+    
+    <% else %>
+    <%= image_tag "guy-1.jpg", class:'card-img' %>
+    <% end %>
+    <strong><h4><%= @profile.name %></h4></strong>
+   
 
-<h1>Bienvenue sur votre profil public. </h1>
-
-<p>
-  <strong>Description:</strong>
-  <%= @profile.description %>
-</p>
-
+    
 <p>
   <strong>Compétences:</strong>
   <%= @profile.skills %>
@@ -27,7 +54,29 @@
   <%= @profile.city %>
 </p>
 
+<p>
+<strong>Description:</strong>
+<%= @profile.description %>
+</p>
+
+<p>
 
 
-<%= link_to 'Modifiez votre profil', edit_profile_path(@profile) %> 
+<%= link_to 'Send Invitation',invitations_create_path(ids: {id1: current_user.id, id2: @profile.user_id}), class: 'btn btn-primary'%>      
+    
+ 
+  <% if current_user.present? && current_user.id == @profile.user_id %>
+  <%= link_to 'Modifiez votre profil', edit_profile_path(@profile), class:"btn btn-primary" %>
+  <% end %>
+         </div>
+     </div>
+          </div>
+         
+        </div>
+    </div>
+  </div>
+  <%= render ("layouts/footer") %>
+</main>
+
+
 

@@ -1,48 +1,71 @@
-<%= form_with(model: project, local: true) do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<main class="container-section">
+<article> 
+    <div class="wrapper">
+        <section class="container-section-banner">
+            <div class="page-header page-header-small">
+                <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path("startup.jpg") %>);"></div>
+                <h1>Edit project</h1>
+            </div>
+        </section> 
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :budget_id %>
-    <%= form.number_field :budget_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :profile_needed %>
-    <%= form.text_field :profile_needed %>
-  </div>
-
-  <div class="field">
-    <%= form.label :files %>
-    <%= form.text_field :files %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="porfile-content">
+                        <div class="photo-container img-edit-profile">
+                            <img src="img/Friends/guy-3.jpg" alt="">
+                        </div>
+                        <label for="photoFile" class="btn btn-primary ">Files</label>
+                        <input type="file" class="hidden-xl-down" id="photoFile">
+                    </div>
+                </div>
+                <div class="col-12">
+                  <%= form_with(model: project, local: true, class: "edit-porfile") do |form| %>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="Name" class="p2">Title</label>
+                                <%= form.text_field :title, class: "form-control", placeholder: "Titre" %>
+                                <span class="error"></span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="LastName" class="p2">Budget</label>
+                                <%= form.number_field :budget_id, class: "form-control", placeholder: "Budget" %>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="Name" class="p2">City</label>
+                                <%= form.text_field :city, class: "form-control", placeholder: "Ville" %>
+                                <span class="error"></span>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <label for="LastName" class="p2">Profil needed</label>
+                                <%= form.text_field :profile_needed, class: "form-control", placeholder: "Profil recherché" %>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <label for="Email" class="p2">Files</label>
+                                <%= form.text_field :files, class: "form-control", placeholder: "Files" %>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                <label for="Descropcion" class="p2">Description</label>
+                                <%= form.text_area :description, placeholder: "Dites en plus sur vous à votre futur partenaire", class: "form-control", cols: "30", rows: "3" %>
+                                <span class="error"></span>
+                            </div>
+                        </div>
+                        
+                        <%= form.submit class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
+</main>
