@@ -4,12 +4,14 @@ class User < ApplicationRecord
   before_create :build_profile
   after_create :welcome_send
   has_many :projects
+
   has_many :articles
   has_one :profile
   has_many :invitations
   has_many :pending_invitations, -> { where confirmed: false }, class_name: 'Invitation', foreign_key: 'friend_id'
   has_many :messages
   has_many :conversations, foreign_key: :sender_id
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -27,9 +29,13 @@ class User < ApplicationRecord
     Invitation.confirmed_record?(id, user.id)
   end
 
+
   def send_invitation(user)
     invitations.create(friend_id: user.id)
   end
+
+  has_one :profile
+
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+
 Rails.application.routes.draw do
   get 'home_message/index'
   resources :articles
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
     resources :messages, only: [:create]
   end
   resources :profiles
+
 
   resources :budgets
   resources :projects
