@@ -1,4 +1,5 @@
-class OrdersController < ApplicationController
-	belongs_to :user
+# frozen_string_literal: true
 
+class OrdersController < ApplicationController
+  belongs_to :user
 end

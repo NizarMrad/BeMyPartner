@@ -29,13 +29,11 @@ class User < ApplicationRecord
     Invitation.confirmed_record?(id, user.id)
   end
 
-
   def send_invitation(user)
     invitations.create(friend_id: user.id)
   end
 
   has_one :profile
-
 
   def welcome_send
     UserMailer.welcome_email(self).deliver_now
