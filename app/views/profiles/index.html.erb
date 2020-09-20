@@ -30,9 +30,7 @@
                             <% end %>
                              
                                <%= link_to 'Modifiez votre profil', edit_profile_path(current_user.profile.id), class:"btn btn-primary" %>
-                            
-                            
-
+                    
 
 
                             <a href="#button" class="btn btn-default btn-round btn-lg btn-icon" rel="tooltip" title="Linkedin">
@@ -207,60 +205,6 @@
                 </div>
             </div>
         </div>
-
-  <div class="section section-javascript" id="javascriptComponents">
-                <div class="container">
-                    <div class="row" id="modals">
-                        <div class="col-md-6">
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                Besoin de plus d'accompagnement ?
-                            </button>                     
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-<%= form_tag charges_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-  </article>
-
-<!-- Sart Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header justify-content-center">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                            <i class="now-ui-icons ui-1_simple-remove"></i>
-                        </button>
-                        <h4 class="title title-up">Notre offre d'accompagnement personnalisé</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Vous souhaitez être encadré de A à Z, de la creation du business model au lancement du projet, c'est possible ! Prenez rendez vous avec notre équipe qui reviendra vers vous afin de répondre à vos besoins.
-                        </p>
-
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                         data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-                         data-description="Rendez vous de 30min"
-                         data-amount="500"
-                         data-label="Demander un rendez vous"
-                         data-currency="eur"
-                         data-locale="auto">
-
-                         </script>                     
-
-
-
-
-</div>
-<% end %>
 
         <%= render("layouts/footer") %>
     </div>

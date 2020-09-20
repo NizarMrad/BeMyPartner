@@ -63,12 +63,10 @@ ActiveRecord::Schema.define(version: 2020_09_18_120452) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.string "content"
+    t.text "text"
     t.bigint "user_id"
-    t.bigint "article_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["article_id"], name: "index_comments_on_article_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -115,7 +113,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_120452) do
     t.string "linkedin_url"
     t.integer "age"
     t.string "city"
-    t.bigint "user_id", null: false
+    t.integer "user_id"
     t.integer "sector_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -161,6 +159,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_120452) do
   add_foreign_key "budgetisations", "budgets"
   add_foreign_key "budgetisations", "projects"
   add_foreign_key "budgets", "projects"
+  add_foreign_key "comments", "users"
   add_foreign_key "invitations", "users"
   add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
