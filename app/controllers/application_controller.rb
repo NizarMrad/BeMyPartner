@@ -11,4 +11,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [profile_attributes: %i[description skills linkedin_url age city user_id sector_id]])
   end
 
+  
+
 end

@@ -29,21 +29,18 @@
                             
                         <div class="tab-content">
                             <div class="tab-pane Follow" id="articles" role="tabpanel">
-                            <% Article.all.each do |article| %>
-                                <div class="row">
-                                <div class="col-12 col-sm-2"></div>
-                                <div class="col-12 col-sm-8 media Tweets">
-                                <%= image_tag('workplace.jpg', class:"mr-3  img-flex", alt: "Generic placeholder image") %>
-                                    <div class="media-body">
-                                        <h5 class="mt-0"><%= article.title %></h5>
-                                        <%= article.content %>
-                                        <br/>
-                                        <%= link_to 'Show', article %> 
+                            
+                                <% Article.all.each do |article| %>
+                                    <div class="media Tweets">
+                                    <%= image_tag('workplace.jpg', class:"mr-3  img-flex", alt: "Generic placeholder image") %>
+                                        <div class="media-body">
+                                            <h5 class="mt-0"><%= article.title %></h5>
+                                        <p class='fivelines'> <%= article.content %></p>
+                                            <br/>
+                                            <%= link_to 'Lire plus', article %> 
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12 col-sm-2"></div>
-                                </div>
-                                <% end %>
+                                    <% end %>
                                 
                             </div>
                             <!-- Le parcours de l'entrepreneur -->
