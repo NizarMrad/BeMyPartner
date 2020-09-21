@@ -71,3 +71,4 @@ gem 'jquery-rails'
 gem 'redis'
 gem 'rubocop', require: false
 gem 'stripe'
+gem 'faker'

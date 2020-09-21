@@ -4,7 +4,7 @@
         <section class="container-section-banner">
             <div class="page-header page-header-small">
                 <div class="page-header-image" data-parallax="true" style="background-image: url(<%= image_path("startup2.jpg") %>);"></div>
-                <h1>Your Projects</h1>
+                <h1>Vos Projets</h1>
             </div>
         </section>
     </div>
@@ -27,7 +27,7 @@
                 <li class="list-group-item"><strong>City :</strong>  <%= project.city %></li>
                 <li class="list-group-item"><strong>Profile needed :</strong>   <%= project.profile_needed %></li>
                 <li class="list-group-item"><strong>Files :</strong> <%= project.profile_needed %></li>
-                <li class="list-group-item"><strong>Contact of the project owner :</strong>  <%= project.user.email %></li>
+                <li class="list-group-item"><strong>Contact of the project owner :</strong>  <%= project.user.name %></li>
               </ul>
                     </br>
         <p class="card-text"><strong> Project description:</strong>  <%= project.description %></p>
