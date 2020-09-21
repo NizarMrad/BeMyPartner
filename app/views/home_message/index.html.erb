@@ -28,12 +28,9 @@
                                 <li class="active bounceInDown">   
                                        <%= image_tag 'guy-1.jpg', class: "img-circle" %> 
                                         <div class="friend-name">   
-                                            <strong><%= user.id %></strong>
+                                            <strong><%= link_to user.profile.name, conversations_path(user_id: user), remote: true, method: :post %></strong>
                                         </div>
-                                        <div class="last-message text-muted">Hello, Are you there?</div>
-                                        <small class="time text-muted">Just now</small>
-                                        <small class="chat-alert badge badge-danger">1</small>
-                                        <%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %>
+                                        <div class="last-message text-muted"><%= user.profile.skills %></div>
                                 </li>
                                 </br>   
                               <% end %>

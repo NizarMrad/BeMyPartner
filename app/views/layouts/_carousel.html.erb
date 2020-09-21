@@ -9,26 +9,42 @@
     <div class="carousel-item active">
       <%= image_tag "bmp-1.png", class:"d-block", style:" width:100%; height: 600px !important;" %>
       <div class="carousel-caption d-none d-md-block">
+      <% if current_user %>
+      <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      <% else %>
       <%= link_to "S'inscrire", new_user_registration_path, class:'btn btn-primary' =%>
+      <% end %>
       </div>
     </div>
     <div class="carousel-item ">
       <%= image_tag "Bmp-2.png", class:"d-block", style:" width:100%; height: 600px !important;" %>
       <div class="carousel-caption d-none d-md-block">
-      <div class="btn btn-primary">S'inscrire</div>
+      <% if current_user %>
+      <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      <% else %>
+      <%= link_to "S'inscrire", new_user_registration_path, class:'btn btn-primary' =%>
+      <% end %>
       </div>
     </div>
 
     <div class="carousel-item">
       <%= image_tag "bmp-4.jpg", class:"d-block", style:" width:100%; height: 600px !important;" %>
       <div class="carousel-caption d-none d-md-block">
-      <div class="btn btn-primary">S'inscrire</div>
+      <% if current_user %>
+      <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      <% else %>
+      <%= link_to "S'inscrire", new_user_registration_path, class:'btn btn-primary' =%>
+      <% end %>
       </div>
     </div>
     <div class="carousel-item">
       <%= image_tag "Bmp-5.png", class:"d-block", style:" width:100%; height: 600px !important;" %>
       <div class="carousel-caption d-none d-md-block">
-      <div class="btn btn-primary">S'inscrire</div>
+      <% if current_user %>
+      <%= link_to 'Se déconnecter', destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
+      <% else %>
+      <%= link_to "S'inscrire", new_user_registration_path, class:'btn btn-primary' =%>
+      <% end %>
       </div>
     </div>
   </div>
