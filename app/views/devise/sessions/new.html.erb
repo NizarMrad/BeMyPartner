@@ -12,14 +12,14 @@
                   <div class="content">
                       <div class="input-group form-group-no-border input-lg">
                           <span class="input-group-addon">
-                              <i class="now-ui-icons users_circle-08"></i>
+                              <%= image_tag"at.png", class:"logo-form"%>
                           </span>
                                     
                           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Email" %>
                       </div>
                       <div class="input-group form-group-no-border input-lg">
                           <span class="input-group-addon">
-                              <i class="now-ui-icons ui-1_lock-circle-open"></i>
+                              <%= image_tag"lock.png", class:"logo-form"%>
                           </span>
                           <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Mot de passe" %>
                       </div>
@@ -46,6 +46,7 @@
      </div>
   </div>
 </div>
+<%= devise_error_messages! %>
 <%= render ("layouts/footer2") %>
 </body>
 

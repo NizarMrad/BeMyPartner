@@ -20,7 +20,7 @@
    
     <%= image_tag "workplace.jpg", class:'card-img' %>
   
-    <strong><h4>Juan Ramirez</h4></strong>
+    <strong><h4><%= User.find(@project.user_id).profile.name %></h4></strong>
     </br>
    
 

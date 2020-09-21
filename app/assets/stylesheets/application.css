@@ -85,7 +85,6 @@
   object-position: 50% 50%;
 }
 
-
 .fivelines {
   margin: 20px;
 
@@ -107,4 +106,41 @@ table.dataTable thead .sorting_desc:before,
 table.dataTable thead .sorting_desc_disabled:after,
 table.dataTable thead .sorting_desc_disabled:before {
   bottom: 0.5em;
+}
+
+.logo-form {
+  margin-right: 10px;
+}
+
+/*flash*/
+.alert-error {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-alert {
+  background-color: #f2dede;
+  border-color: #eed3d7;
+  color: #b94a48;
+  text-align: left;
+}
+
+.alert-success {
+  background-color: black;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+  margin-top: 60px;
+  font-weight: bold;
+}
+
+.alert-notice {
+  background-color: black;
+  border-color: #d6e9c6;
+  color: #468847;
+  text-align: left;
+  margin-top: 60px;
+  font-weight: bold;
 }

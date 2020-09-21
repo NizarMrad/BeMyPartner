@@ -62,7 +62,7 @@
 <p>
 
 
-<%= link_to 'Send Invitation',invitations_create_path(ids: {id1: current_user.id, id2: @profile.user_id}), class: 'btn btn-primary'%>      
+<%= link_to 'Envoyez une invitation',invitations_create_path(ids: {id1: current_user.id, id2: @profile.user_id}), class: 'btn btn-primary'%>     
     
  
   <% if current_user.present? && current_user.id == @profile.user_id %>
