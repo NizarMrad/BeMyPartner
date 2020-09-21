@@ -26,7 +26,8 @@ end
     description: Faker::GreekPhilosophers.quote,
     city: Faker::Nation.capital_city,
     linkedin_url: Faker::Internet.domain_name,
-    age: rand(16..125)
+    age: rand(16..125),
+    user_id: rand(1..3)
   )
 end
 
